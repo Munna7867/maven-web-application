@@ -1,4 +1,4 @@
-pipeline {
+ pipeline {
      agent any
 	 stages{
 	     stage ('git checkout')
@@ -19,6 +19,12 @@ pipeline {
 			  sh 'mvn verify -DskipUnitTests'  
 			 }
          }
+	     stage ('maven building')
+		 {
+		    steps{
+			  sh 'mvn clean install'  
+			 }
+         }
 	 }	 
 	     
-	 }	
+	 }	 
