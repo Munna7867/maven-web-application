@@ -1,4 +1,4 @@
-  pipeline {
+ pipeline {
      agent any
 	 stages{
 	     stage ('git checkout')
@@ -36,6 +36,15 @@
 				 }
 			 }
          }
-	 }	 
+	      stage ('quality gate status')
+		 {
+		    steps{
+			   script{
+			  waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
+			 
+				 }
+			 }
+         } 
+	  }	  
 	     
-	 }
+	 }	 
