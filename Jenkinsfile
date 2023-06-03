@@ -45,6 +45,29 @@
 				 }
 			 }
          } 
+	      stage ('upload war file to nexus')
+		 {
+		    steps{
+			   script{
+			  nexusArtifactUploader artifacts: 
+			  [
+			     [
+			        artifactId: 'maven-web-application', 
+			        classifier: '', file: 'target/maven-web-application.war', 
+			        type: 'war'
+			        ]
+			  ], 
+			  credentialsId: 'nexus-arth', 
+			  groupId: 'com.mt', 
+			  nexusUrl: '43.204.231.156:8081', 
+			  nexusVersion: 'nexus3', 
+			  protocol: 'http', 
+			  repository: 'demoproject-release', 
+			  version: '0.0.1'
+			 
+				 }
+			 }
+         }  
 	  }	  
 	     
-	 }	 
+	 }
