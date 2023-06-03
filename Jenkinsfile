@@ -63,7 +63,7 @@
 			  nexusVersion: 'nexus3', 
 			  protocol: 'http', 
 			  repository: 'demoproject-release', 
-			  version: '0.0.1'
+			  version: '0.0.2'
 			 
 				 }
 			 }
