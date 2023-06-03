@@ -49,7 +49,7 @@
 		 {
 		    steps{
 			   script{
-			   def readpomversion - readmavenpom file: 'pom.xml'
+			   def readPomVersion - readMavenPom file: 'pom.xml'
 			  nexusArtifactUploader artifacts: 
 			  [
 			     [
@@ -64,11 +64,12 @@
 			  nexusVersion: 'nexus3', 
 			  protocol: 'http', 
 			  repository: 'demoproject-release', 
-			  version: "${read pom version.version}"
+			  version: "${readPomVersion.version}"
 			 
 				 }
 			 }
          }  
 	  }	  
 	     
-	 }
+	 }	 
+ 
