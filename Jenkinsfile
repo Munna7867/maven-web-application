@@ -1,4 +1,4 @@
- pipeline {
+  pipeline {
      agent any
 	 stages{
 	     stage ('git checkout')
@@ -49,6 +49,7 @@
 		 {
 		    steps{
 			   script{
+			   def readpomversion - readmavenpom file: 'pom.xml'
 			  nexusArtifactUploader artifacts: 
 			  [
 			     [
@@ -63,7 +64,7 @@
 			  nexusVersion: 'nexus3', 
 			  protocol: 'http', 
 			  repository: 'demoproject-release', 
-			  version: '0.0.1'
+			  version: "${read pom version.version}"
 			 
 				 }
 			 }
