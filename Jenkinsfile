@@ -1,4 +1,4 @@
-   pipeline {
+  pipeline {
      agent any
 	 stages{
 	     stage ('git checkout')
@@ -73,11 +73,11 @@
 		    steps{
 			   script{
 			        sh'docker image build -t demoproject:v1.29 .'
-					sh'docker image tag demoproject:v1.29' baluyadav039/demoproject:v1.29'
-					sh'docker image tag demoproject:v1.29' baluyadav039/demoproject:latest		
+					sh'docker image tag demoproject:v1.29 baluyadav039/demoproject:v1.29'
+					sh'docker image tag demoproject:v1.29 baluyadav039/demoproject:latest'		
 	       	     }
 			 }
          }
 	  }	  
 	     
-	 }	 
+	 }
