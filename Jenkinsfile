@@ -59,11 +59,11 @@
 			  ], 
 			  credentialsId: 'nexus-arth', 
 			  groupId: 'com.mt', 
-			  nexusUrl: '43.204.231.156:8081', 
+			  nexusUrl: '65.0.106.59:8081', 
 			  nexusVersion: 'nexus3', 
 			  protocol: 'http', 
 			  repository: 'demoproject-release', 
-			  version: '0.0.2'
+			  version: '0.0.3'
 			 
 				 }
 			 }
